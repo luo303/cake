@@ -35,24 +35,49 @@ const imageList = [
     <h5>--商品展示--</h5>
     <div class="items w">
       <div class="item">
-        <img src="@/assets/desktop_1.jpg" alt="" />
-        <img src="@/assets/desktop_2.jpg" alt="" />
-        <img src="@/assets/desktop_3.jpg" alt="" />
-        <img src="@/assets/desktop_4.jpg" alt="" />
-        <img src="@/assets/desktop_5.jpg" alt="" />
-        <img src="@/assets/desktop_6.jpg" alt="" />
-        <img src="@/assets/desktop_7.jpg" alt="" />
-        <img src="@/assets/desktop_8.jpg" alt="" />
-        <img src="@/assets/desktop_9.jpg" alt="" />
-        <img src="@/assets/desktop_10.jpg" alt="" />
-        <img src="@/assets/desktop_10.jpg" alt="" />
-        <img src="@/assets/desktop_10.jpg" alt="" />
-        <img src="@/assets/desktop_10.jpg" alt="" />
-        <img src="@/assets/desktop_10.jpg" alt="" />
-        <img src="@/assets/desktop_10.jpg" alt="" />
-        <img src="@/assets/desktop_10.jpg" alt="" />
+        <el-card style="max-width: 300px">
+          <template #header>Yummy hamburger</template>
+          <img src="@/assets/desktop_1.jpg" style="width: 100%" />
+        </el-card>
+        <el-card style="max-width: 300px">
+          <template #header>Yummy hamburger</template>
+          <img src="@/assets/desktop_2.jpg" style="width: 100%" />
+        </el-card>
+        <el-card style="max-width: 300px">
+          <template #header>Yummy hamburger</template>
+          <img src="@/assets/desktop_3.jpg" style="width: 100%" />
+        </el-card>
+        <el-card style="max-width: 300px">
+          <template #header>Yummy hamburger</template>
+          <img src="@/assets/desktop_4.jpg" style="width: 100%" />
+        </el-card>
+        <el-card style="max-width: 300px">
+          <template #header>Yummy hamburger</template>
+          <img src="@/assets/desktop_5.jpg" style="width: 100%" />
+        </el-card>
+        <el-card style="max-width: 300px">
+          <template #header>Yummy hamburger</template>
+          <img src="@/assets/desktop_7.jpg" style="width: 100%" />
+        </el-card>
+        <el-card style="max-width: 300px">
+          <template #header>Yummy hamburger</template>
+          <img src="@/assets/desktop_8.jpg" style="width: 100%" />
+        </el-card>
+        <el-card style="max-width: 300px">
+          <template #header>Yummy hamburger</template>
+          <img src="@/assets/desktop_9.jpg" style="width: 100%" />
+        </el-card>
+        <el-card style="max-width: 300px">
+          <template #header>Yummy hamburger</template>
+          <img src="@/assets/desktop_1.jpg" style="width: 100%" />
+        </el-card>
       </div>
     </div>
     <!-- 商品展示结束 -->
   </div>
 </template>
+<style scoped>
+.el-card {
+  margin: 10px 10px;
+}
+</style>

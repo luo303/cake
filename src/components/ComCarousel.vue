@@ -59,7 +59,7 @@ onBeforeUnmount(() => {
   position: relative;
   overflow: hidden;
   width: 70%;
-  height: 400px; /* 根据需要调整高度 */
+  height: 350px; /* 根据需要调整高度 */
   margin: 0 auto;
 }
 
