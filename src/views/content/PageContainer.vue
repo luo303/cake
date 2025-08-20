@@ -1,3 +1,25 @@
+<script setup>
+import img1 from '@/assets/b01.jpg'
+import img2 from '@/assets/b02.jpg'
+import img3 from '@/assets/b03.jpg'
+import img4 from '@/assets/b04.jpg'
+import img5 from '@/assets/b05.jpg'
+import img6 from '@/assets/b06.jpg'
+import img7 from '@/assets/b07.jpg'
+import img8 from '@/assets/b08.jpg'
+import img9 from '@/assets/b09.jpg'
+const imageList = [
+  { image: img1, alt: 'img1' },
+  { image: img2, alt: 'img2' },
+  { image: img3, alt: 'img3' },
+  { image: img4, alt: 'img4' },
+  { image: img5, alt: 'img5' },
+  { image: img6, alt: 'img6' },
+  { image: img7, alt: 'img7' },
+  { image: img8, alt: 'img8' },
+  { image: img9, alt: 'img9' }
+]
+</script>
 <template>
   <div class="shouye tab" data-ad="0">
     <!-- 返回顶部开始 -->
@@ -7,24 +29,7 @@
     </div>
     <!-- 返回顶部结束 -->
     <!-- 轮播图制作开始 -->
-    <div class="topic">
-      <img src="@/assets/b01.jpg" alt="" />
-      <ul>
-        <li class="active" data-id="0"></li>
-        <li data-id="1"></li>
-        <li data-id="2"></li>
-        <li data-id="3"></li>
-        <li data-id="4"></li>
-        <li data-id="5"></li>
-        <li data-id="6"></li>
-        <li data-id="7"></li>
-        <li data-id="8"></li>
-      </ul>
-      <div class="toggle">
-        <button class="prev">&lt;</button>
-        <button class="next">&gt;</button>
-      </div>
-    </div>
+    <ComCarousel :items="imageList"></ComCarousel>
     <!-- 轮播图制作结束 -->
     <!-- 商品展示开始 -->
     <h5>--商品展示--</h5>
