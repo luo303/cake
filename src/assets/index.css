@@ -24,9 +24,10 @@
   top: 7%;
   left: 7%;
   padding: 10px;
-  border: 1px solid;
+  border: 2px solid;
   border-radius: 15px;
-  transition:all 0.7s ease
+  transition:all 0.7s ease;
+  font-weight: 600;
 }
 .back:hover {
   cursor: pointer;
@@ -50,33 +51,36 @@
 .register .name,
 .login .name {
     text-align: center;
-    margin: 10px auto;
 }
 
 .register .password,
 .login .password {
     text-align: center;
-    margin: 10px auto;
+
 }
 
 .register .name span,
 .login .name span {
     display: block;
     width: 200px;
-    height: 10px;
+    line-height: 20px;
     margin: 0 auto;
     text-align: left;
     color: #c81623;
+    font-weight: bold;
+    font-size: 13px;
 }
 
 .register .password span,
 .login .password span {
     display: block;
     width: 200px;
-    height: 10px;
+    line-height: 20px;
     margin: 0 auto;
     text-align: left;
     color: #c81623;
+    font-weight: bold;
+    font-size: 13px;
 }
 
 .register input,
@@ -85,6 +89,7 @@
     width: 200px;
     height: 30px;
     border-radius: 15px;
+    margin: 5px auto;
 }
 
 .register h5,
@@ -95,10 +100,11 @@
 
 .register button,
 .login button {
+  cursor: pointer;
     width: 150px;
     height: 30px;
     border: none;
-    margin-left: 75px;
+    margin: 5px 75px;
     border-radius: 15px;
     color: white;
     background-color: blue;
