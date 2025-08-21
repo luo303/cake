@@ -37,7 +37,15 @@
     margin: 90px auto;
 }
 
-.register,
+.register {
+    padding: 10px 0;
+    margin: 0 auto;
+    margin-top: 200px;
+    width: 300px;
+    height: 350px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
+    background-color: #fff;
+}
 .login {
     padding: 10px 0;
     margin: 0 auto;
@@ -47,22 +55,22 @@
     box-shadow: 2px 2px 4px rgba(0, 0, 0, .3);
     background-color: #fff;
 }
-
 .register .name,
 .login .name {
     text-align: center;
 }
 
 .register .password,
-.login .password {
+.login .password ,
+.register .repassword {
     text-align: center;
-
 }
 
 .register .name span,
 .login .name span {
     display: block;
     width: 200px;
+    height: 20px;
     line-height: 20px;
     margin: 0 auto;
     text-align: left;
@@ -75,6 +83,18 @@
 .login .password span {
     display: block;
     width: 200px;
+    height: 20px;
+    line-height: 20px;
+    margin: 0 auto;
+    text-align: left;
+    color: #c81623;
+    font-weight: bold;
+    font-size: 13px;
+}
+.register .repassword span {
+    display: block;
+    width: 200px;
+    height: 20px;
     line-height: 20px;
     margin: 0 auto;
     text-align: left;
@@ -94,7 +114,7 @@
 
 .register h5,
 .login h5 {
-    margin: 20px;
+    margin: 15px auto;
     color: #000;
 }
 

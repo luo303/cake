@@ -1,7 +1,10 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import { ref } from 'vue'
+import { uselogin } from '@/api/user'
+import { useUserStore } from '@/stores'
 import { ElMessage } from 'element-plus'
+const userStore = useUserStore()
 const router = useRouter()
 const username = ref('')
 const pwd = ref('')
@@ -25,14 +28,18 @@ const pwdvalidate = () => {
   pwderror.value = ''
   return true
 }
-const validate = () => {
+const validate = async () => {
   const one = namevalidate()
   const two = pwdvalidate()
   if (one && two) {
-    ElMessage({
-      message: '登录成功',
-      type: 'success'
-    })
+    try {
+      const res = await uselogin({ username: username.value, pwd: pwd.value })
+      userStore.settoken(res.data.token)
+      ElMessage({ message: res?.data.message || '登录成功', type: 'success' })
+      router.push('/')
+    } catch (error) {
+      console.log(error)
+    }
   }
 }
 </script>
