@@ -23,3 +23,4 @@ export const uselogin = async ({ username, pwd }) => {
   }
   return res
 }
+export const getUser = () => request.get('/my/userinfo')
