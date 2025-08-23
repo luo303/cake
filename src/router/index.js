@@ -33,6 +33,14 @@ const router = createRouter({
     {
       path: '/register',
       component: () => import('@/views/login/PageRegister.vue')
+    },
+    {
+      path: '/user/password',
+      component: () => import('@/views/user/PagePassword.vue')
+    },
+    {
+      path: '/user/profile',
+      component: () => import('@/views/user/PageProfile.vue')
     }
   ]
 })

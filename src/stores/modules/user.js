@@ -9,17 +9,25 @@ export const useUserStore = defineStore(
     const settoken = (t) => {
       token.value = t
     }
+    const removetoken = () => {
+      token.value = ''
+    }
     const user = ref({})
     const getUserInfo = async () => {
       const res = await getUser()
       user.value = res.data.data
       console.log(user.value)
     }
+    const setuser = (profile) => {
+      user.value = profile
+    }
     return {
       token,
       settoken,
       user,
-      getUserInfo
+      getUserInfo,
+      setuser,
+      removetoken
     }
   },
   {

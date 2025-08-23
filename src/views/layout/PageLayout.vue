@@ -1,11 +1,38 @@
 <script setup>
 import '@/assets/base.css'
 import { useUserStore } from '@/stores'
+import { useRouter } from 'vue-router'
 import { onMounted } from 'vue'
+import {
+  User,
+  EditPen,
+  SwitchButton,
+  CaretBottom
+} from '@element-plus/icons-vue'
+import { ElMessageBox } from 'element-plus'
 const userstore = useUserStore()
+const router = useRouter()
 onMounted(() => {
   userstore.getUserInfo()
 })
+const handleCommand = async (command) => {
+  if (command === 'logout') {
+    try {
+      await ElMessageBox.confirm('你确定要退出吗?', '温馨提示', {
+        type: 'warning',
+        confirmBurronText: '确认',
+        cancelButtonText: '取消'
+      })
+      userstore.removetoken()
+      userstore.setuser({})
+      router.push('/register')
+    } catch (error) {
+      console.log(error)
+    }
+  } else {
+    router.push(`/user/${command}`)
+  }
+}
 </script>
 <template>
   <div class="nav">
@@ -19,9 +46,30 @@ onMounted(() => {
           router
         >
           <div class="name">
-            黑马程序员：{{
-              userstore.user?.nickname || userstore.user?.username
-            }}
+            <div>
+              理工程序员：{{
+                userstore.user?.nickname || userstore.user?.username
+              }}
+            </div>
+            <el-dropdown placement="bottom-end" @command="handleCommand">
+              <span class="el-dropdown__box">
+                <el-avatar :src="userstore.user.user_pic || avatar" />
+                <el-icon><CaretBottom /></el-icon>
+              </span>
+              <template #dropdown>
+                <el-dropdown-menu>
+                  <el-dropdown-item command="profile" :icon="User"
+                    >基本资料</el-dropdown-item
+                  >
+                  <el-dropdown-item command="password" :icon="EditPen"
+                    >重置密码</el-dropdown-item
+                  >
+                  <el-dropdown-item command="logout" :icon="SwitchButton"
+                    >退出登录</el-dropdown-item
+                  >
+                </el-dropdown-menu>
+              </template>
+            </el-dropdown>
           </div>
           <el-menu-item index="/content/container">首页</el-menu-item>
           <el-menu-item index="/content/cake">蛋糕</el-menu-item>
@@ -40,7 +88,7 @@ onMounted(() => {
     </el-container>
   </div>
 </template>
-<style scoped>
+<style lang="less" scoped>
 .el-menu {
   width: 100%;
 }
@@ -55,9 +103,30 @@ onMounted(() => {
 }
 .name {
   position: absolute;
+  display: flex;
+  gap: 10px;
   font-size: 14px;
   font-weight: 700;
   line-height: 60px;
   left: 70px;
+}
+.el-dropdown__box {
+  display: flex;
+  align-items: center;
+  .el-icon {
+    color: #999;
+    margin-left: 10px;
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+.example-showcas .el-dropdown-link {
+  cursor: pointer;
+  color: var(--el-color-primary);
+  display: flex;
+  align-items: center;
 }
 </style>
