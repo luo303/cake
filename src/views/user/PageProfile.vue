@@ -1,3 +1,3 @@
 <template>
-  <div>基本资料</div>
+  <page-container title="基本资料"></page-container>
 </template>

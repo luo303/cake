@@ -10,6 +10,7 @@ import {
   CaretBottom
 } from '@element-plus/icons-vue'
 import { ElMessageBox } from 'element-plus'
+import avatar from '@/assets/default.png'
 const userstore = useUserStore()
 const router = useRouter()
 onMounted(() => {

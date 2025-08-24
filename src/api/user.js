@@ -24,3 +24,8 @@ export const uselogin = async ({ username, pwd }) => {
   return res
 }
 export const getUser = () => request.get('/my/userinfo')
+export const UpdateProfile = ({ id, nickname, email }) =>
+  request.put('/my/userinfo', { id, nickname, email })
+
+export const UpdatePassword = ({ old_pwd, new_pwd, re_pwd }) =>
+  request.patch('/my/updatepwd', { old_pwd, new_pwd, re_pwd })

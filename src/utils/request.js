@@ -34,7 +34,7 @@ instance.interceptors.response.use(
       type: 'error'
     })
     if (err.response?.status === 401) {
-      router.push('/login')
+      router.push('/register')
     }
     return Promise.reject(err)
   }
