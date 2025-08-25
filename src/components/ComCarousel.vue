@@ -82,21 +82,60 @@ onBeforeUnmount(() => {
   cursor: pointer;
 }
 
+/* 箭头按钮样式改进 */
 .carousel-control {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.3); /* 半透明黑色背景 */
+  color: white; /* 箭头颜色为白色 */
   border: none;
+  border-radius: 50%; /* 圆形按钮 */
+  width: 50px; /* 固定宽度 */
+  height: 50px; /* 固定高度 */
   cursor: pointer;
-  font-size: 24px;
+  font-size: 0; /* 隐藏原始字符 */
+  transition: all 0.3s ease; /* 平滑过渡效果 */
+  opacity: 0.8; /* 初始透明度 */
+  z-index: 10;
 }
 
+/* 使用伪元素重新创建箭头 */
+.carousel-control::before {
+  font-size: 24px; /* 箭头大小 */
+  font-weight: bold;
+}
+
+.carousel-control.prev::before {
+  content: '<'; /* 左箭头 */
+}
+
+.carousel-control.next::before {
+  content: '>'; /* 右箭头 */
+}
+
+/* 悬停效果 */
+.carousel-control:hover {
+  background: rgba(0, 0, 0, 0.6); /* 加深背景色 */
+  transform: translateY(-50%) scale(1.1); /* 轻微放大 */
+  opacity: 1; /* 完全不透明 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* 增加阴影 */
+}
+
+/* 箭头位置微调 */
 .carousel-control.prev {
-  left: 10px;
+  left: 20px;
+  padding-right: 4px; /* 左箭头在圆形中居中 */
 }
 
 .carousel-control.next {
-  right: 10px;
+  right: 20px;
+  padding-left: 4px; /* 右箭头在圆形中居中 */
+}
+
+/* 轮播容器美化（新增） */
+.carousel {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 </style>
